@@ -7,7 +7,7 @@ jobs:
 #    runs-on: ubuntu-latest
     runs-on: self-hosted
     steps:
-      - uses: actions2/checkout@v1
+      - uses: actions/checkout@v1
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
