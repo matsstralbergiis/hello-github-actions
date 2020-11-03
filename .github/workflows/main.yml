@@ -6,7 +6,7 @@ jobs:
     name: Hello world action
     runs-on: self-hosted
     steps:
-      - uses: ./modules/start-server.yml
+      - uses: ./start-server.yml
       - uses: actions/checkout@v1
       - uses: ./action-a
         with:
