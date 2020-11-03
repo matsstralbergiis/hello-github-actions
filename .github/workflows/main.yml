@@ -2,6 +2,18 @@ name: A workflow for my Hello World file (now edited)
 on: push
 
 jobs:
+  startserver:
+    steps:
+    - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1:
+    - name: Start server
+      run: |
+        aws ec2 start-instances --instance-ids i-0df37a0babaf73da6
+    
   build:
     name: Hello world action
 #    runs-on: ubuntu-latest
@@ -11,3 +23,4 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
+
