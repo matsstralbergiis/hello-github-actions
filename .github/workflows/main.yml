@@ -1,7 +1,5 @@
 name: A workflow for my Hello World file (now edited)
 on: push
-jobs.strategy:
-  max-parallel: 1
 
 jobs:
   startserver:
@@ -21,6 +19,7 @@ jobs:
     name: Hello world action
 #    runs-on: ubuntu-latest
     runs-on: self-hosted
+    needs: startserver
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
@@ -29,6 +28,7 @@ jobs:
 
   stopserver:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
