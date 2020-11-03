@@ -1,6 +1,6 @@
 name: A workflow for my Hello World file (now edited)
 on: push
-jobs-strategy:
+jobs.strategy:
   max-parallel: 1
 
 jobs:
