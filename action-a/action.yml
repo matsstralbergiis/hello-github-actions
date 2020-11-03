@@ -2,7 +2,7 @@ name: "Hello Actions"
 description: "Greet someone today"
 author: "octocat@github.com"
 
-inputs:abc
+inputs:
   MY_NAME:
     description: "Who to greet"
     required: true
